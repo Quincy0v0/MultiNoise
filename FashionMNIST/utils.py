@@ -41,7 +41,7 @@ class LogSaver(object):
             self.saver = os.path.join(logdir, logfile)
         else:
             #self.saver = os.path.join(logdir+str(datetime.now()).replace('/','_').replace(':','_')+'.log')
-            self.saver = os.path.join(logdir+'1.log')
+            self.saver = os.path.join(logdir+'noise500.log')
         print('save logs at:', self.saver)
 
     def save(self, item, name=None):
