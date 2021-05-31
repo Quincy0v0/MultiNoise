@@ -40,7 +40,8 @@ class LogSaver(object):
         if logfile:
             self.saver = os.path.join(logdir, logfile)
         else:
-            self.saver = os.path.join(logdir, str(datetime.now())+'.log')
+            #self.saver = os.path.join(logdir+str(datetime.now()).replace('/','_').replace(':','_')+'.log')
+            self.saver = os.path.join(logdir+'1.log')
         print('save logs at:', self.saver)
 
     def save(self, item, name=None):
@@ -117,4 +118,3 @@ def evalHessEigen(eval_tuple, model, criterion, n_iter=10):
     for v in Hv_list:
         v /= (Hv_norm+1e-8)
     return Hv_list
-

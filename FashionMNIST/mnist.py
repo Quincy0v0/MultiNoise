@@ -77,6 +77,6 @@ class FashionMNIST(object):
         return batch_list
 
 if __name__ == '__main__':
-    datapath = '/mnt/home/jingfeng/datasets/FashionMNIST/cl1000'
+    datapath = r'C:\Users\chenp2\datasets\FashionMNIST\cl1000'
     fashion = FashionMNIST(datapath)
     from IPython import embed; embed()

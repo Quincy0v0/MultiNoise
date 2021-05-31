@@ -40,10 +40,11 @@ class LogSaver(object):
         if logfile:
             self.saver = os.path.join(logdir, logfile)
         else:
-            self.saver = os.path.join(logdir, str(datetime.now())+'.log')
+            self.saver = os.path.join(logdir+'.log')
         print('save logs at:', self.saver)
 
     def save(self, item, name=None):
+        print("saver:", self.saver)
         with open(self.saver, 'a') as f:
             if name:
                 f.write('======'+name+'======\n')

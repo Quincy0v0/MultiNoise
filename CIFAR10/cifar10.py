@@ -106,6 +106,6 @@ class CIFAR10(object):
         return X, Y
 
 if __name__ == '__main__':
-    datapath = '/mnt/home/haoyi/jingfengwu/datasets/CIFAR10/numpy'
+    datapath = r'C:\Users\chenp2\datasets\CIFAR10\numpy'
     dataset = CIFAR10(datapath)
     from IPython import embed; embed()

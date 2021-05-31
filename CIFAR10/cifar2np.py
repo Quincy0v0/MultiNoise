@@ -18,8 +18,8 @@ def save2npz(images, labels, out_file):
 if __name__ == '__main__':
     n_examples = 10000
     height, width, channel = 32, 32, 3
-    HOME = os.environ['HOME']
-    DATASET = os.path.join(HOME, 'datasets/CIFAR10')
+    HOME = os.path.expanduser('~')
+    DATASET = os.path.join(HOME, 'datasets\\CIFAR10')
     TARGET = os.path.join(DATASET, 'numpy')
     if not os.path.exists(TARGET):
         os.makedirs(TARGET)
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     all_images = []
     all_labels = []
     for i in range(5):
-        train_raw = unpickle(os.path.join(DATASET, 'cifar-10-batches-py/data_batch_'+str(i+1)))
+        train_raw = unpickle(os.path.join(DATASET, 'cifar-10-batches-py\\data_batch_'+str(i+1)))
         images = train_raw[b'data'].reshape(n_examples, channel, height, width)
         images = np.swapaxes(images, 1, 2)
         images = np.swapaxes(images, 2, 3)
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     # convet validation data
     print('read val files')
-    val_raw = unpickle(os.path.join(DATASET, 'cifar-10-batches-py/test_batch'))
+    val_raw = unpickle(os.path.join(DATASET, 'cifar-10-batches-py\\test_batch'))
     images = val_raw[b'data'].reshape(n_examples, channel, height, width)
     images = np.swapaxes(images, 1, 2)
     images = np.swapaxes(images, 2, 3)

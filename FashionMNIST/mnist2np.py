@@ -12,8 +12,8 @@ def save2npz(images, labels, out_file, marks=None):
     return True
 
 if __name__ == '__main__':
-    HOME = os.environ['HOME']
-    DATASET = os.path.join(HOME, 'datasets/FashionMNIST')
+    HOME = os.path.expanduser('~')
+    DATASET = os.path.join(HOME, r'datasets\FashionMNIST')
     RAW = os.path.join(DATASET, 'raw_gz')
     # TARGET = os.path.join(DATASET, 'cl1000cr200')
     TARGET = os.path.join(DATASET, 'cl1000')
